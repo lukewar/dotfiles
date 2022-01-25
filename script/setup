@@ -46,28 +46,33 @@ for DOTFILE in * .[^.]*; do
        HOMEFILE="$HOME/$DOTFILE"
 
   echo " Installing $HOMEFILE"
-  if [ $UNIX ]
-  then
-    if [ -L "$HOMEFILE" ] && ! [ -d $DOTFILE ]
-    then
-      ln -sfv "$DIRFILE" "$HOMEFILE"
-    else
-      rm -rv "$HOMEFILE"
-      ln -sv "$DIRFILE" "$HOMEFILE"
-    fi
-  else
-    cp -rv "$DIRFILE" "$HOMEFILE"
-  fi
+  # if [ $UNIX ]
+  # then
+  #   if [ -L "$HOMEFILE" ] && ! [ -d $DOTFILE ]
+  #   then
+  #     ln -sfv "$DIRFILE" "$HOMEFILE"
+  #   else
+  #     rm -rv "$HOMEFILE"
+  #     ln -sv "$DIRFILE" "$HOMEFILE"
+  #   fi
+  # else
+  #   cp -rv "$DIRFILE" "$HOMEFILE"
+  # fi
 done
 
 # HOMEDOTFILES="$HOME/.dotfiles"
-if [ "$DOTFILESDIR" != "$HOMEDOTFILES" ]
-then
-  ln -sf "$DOTFILESDIR" "$HOMEDOTFILES"
-fi
+# if [ "$DOTFILESDIR" != "$HOMEDOTFILES" ]
+# then
+#   ln -sf "$DOTFILESDIR" "$HOMEDOTFILES"
+# fi
 
 # Fix up permissions for Codespaces
 if [ -n "$CODESPACES" ]
 then
   chmod 700 /workspaces
 fi
+
+# Install VSCode plugins
+cd $(dirname $0)/..
+
+script/install-vscode-extensions
