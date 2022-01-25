@@ -1,0 +1,8 @@
+eamodio.gitlens
+dbaeumer.vscode-eslint
+github.codespaces
+github.copilot
+ms-vsliveshare.vsliveshare
+esbenp.prettier-vscode
+castwide.solargraph
+wingrunr21.vscode-ruby
