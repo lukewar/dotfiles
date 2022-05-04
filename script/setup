@@ -73,6 +73,6 @@ then
 fi
 
 # Install VSCode plugins
+echo "Install VSCode plugins"
 cd $(dirname $0)/..
-
 script/install-vscode-extensions
