@@ -7,7 +7,10 @@ then
   exit 1
 fi
 
+echo "List extensions:"
 EXTENSIONS="$(code --list-extensions)"
+
+echo "\t$EXTENSIONS"
 
 for EXTENSION in $(cat $(dirname $0)/../vscode-extensions.txt)
 do
