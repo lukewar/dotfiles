@@ -1,4 +1,4 @@
-alias code="open -a 'Visual Studio Code'"
+alias edit="open -a 'Visual Studio Code'"
 alias cdw="cd ~/Workspace"
 
 alias raudio="sudo kextunload /System/Library/Extensions/AppleHDA.kext;sudo kextload /System/Library/Extensions/AppleHDA.kext;sudo kill -9 `ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`"
