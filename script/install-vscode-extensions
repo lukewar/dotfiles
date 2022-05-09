@@ -1,6 +1,12 @@
 #!/bin/bash
 set -e
 
+if [ -n "$CODESPACES" ]
+then
+  echo "Skip installing vscode extensions on codespaces"
+  exit 0
+fi
+
 if ! command -v code >/dev/null
 then
   echo "Install VS Code first!" >&2
