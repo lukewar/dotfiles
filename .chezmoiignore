@@ -1,0 +1,6 @@
+# Source-only paths: present in the chezmoi source repo but NOT applied to $HOME.
+# Templates / run_* scripts reference these via {{ .chezmoi.sourceDir }}/...
+ai
+Brewfile
+vscode-extensions.txt
+vscode-insiders-extensions.txt

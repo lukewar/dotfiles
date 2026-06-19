@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Hash of Brewfile: {{ include "Brewfile" | sha256sum }}
+# Re-runs `brew bundle` whenever the Brewfile content changes.
+set -euo pipefail
+cd "{{ .chezmoi.sourceDir }}"
+if ! command -v brew >/dev/null 2>&1; then
+    echo "Homebrew not installed — install from https://brew.sh first" >&2
+    exit 1
+fi
+echo "==> brew bundle (Brewfile changed)"
+brew bundle --file=Brewfile
