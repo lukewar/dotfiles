@@ -1,0 +1,27 @@
+{
+  "mcpServers": {
+    "datadog": {
+      "tools": [
+        "*"
+      ],
+      "type": "http",
+      "url": "https://mcp.datadoghq.com/api/unstable/mcp-server/mcp?",
+      "headers": {}
+    },
+    "ios-simulator": {
+      "type": "local",
+      "command": "npx",
+      "tools": [
+        "*"
+      ],
+      "args": [
+        "-y",
+        "ios-simulator-mcp"
+      ]
+    },
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["chrome-devtools-mcp@latest", "--autoConnect"]
+    }
+  }
+}

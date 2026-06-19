@@ -1,0 +1,19 @@
+{
+  "renderMarkdown": true,
+  "theme": "auto",
+  "logLevel": "all",
+  "model": "claude-opus-4.7",
+  "extraKnownMarketplaces": {
+    "github-slack-mcp": {
+      "source": {
+        "source": "github",
+        "repo": "github/copilot-slack-mcp"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "slack-mcp@github-slack-mcp": true,
+    "workiq@copilot-plugins": true
+  },
+  "disabledSkills": []
+}
