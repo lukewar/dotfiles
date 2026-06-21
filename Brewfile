@@ -1,15 +1,10 @@
 # Curated essentials for new-Mac bootstrap.
 # Re-generate full snapshot with: brew bundle dump --file=Brewfile.full --force
-#
-# Tier 1 — always install
+
+# ─── CLI tools ──────────────────────────────────────────────────────────────
 brew "chezmoi"          # dotfile manager
 brew "gh"               # GitHub CLI
 brew "node"             # JS runtime
-cask "1password-cli"    # secrets via op://
-cask "copilot-cli"      # GitHub Copilot CLI
-cask "hammerspoon"      # desktop automation (custom Lua config)
-
-# Tier 2 — likely needed for current work
 brew "azure-cli"        # work cloud
 brew "pandoc"           # markup conversion
 brew "ffmpeg"           # media
@@ -20,11 +15,44 @@ brew "cloc"             # line counting
 brew "bats-core"        # bash tests
 brew "cliclick"         # Hammerspoon helper
 brew "poppler"          # PDF utilities
-cask "viscosity"        # OpenVPN client
-cask "graphiql"         # GraphQL explorer
+brew "mas"              # Mac App Store CLI (for Deliveries etc.)
 
-# VS Code stable extensions
-# Tier 1
+# ─── GUI apps (casks) ───────────────────────────────────────────────────────
+# Dev / editors
+cask "visual-studio-code"
+cask "visual-studio-code-insiders"
+cask "iterm2"
+cask "copilot-cli"
+cask "claude"
+cask "chatgpt"
+cask "graphiql"
+cask "hammerspoon"
+cask "1password"
+cask "1password-cli"
+
+# Browsers
+cask "google-chrome"
+cask "microsoft-edge"
+
+# Comms
+cask "slack"
+cask "zoom"
+cask "microsoft-teams"
+
+# Microsoft 365 (Word/Excel/PowerPoint/Outlook/OneNote)
+cask "microsoft-office"
+
+# Productivity
+cask "obsidian"
+cask "raycast"
+cask "cleanshot"
+cask "languagetool"
+cask "viscosity"
+
+# Mac App Store apps (via mas — IDs verified below)
+mas "Deliveries", id: 924726344
+
+# ─── VS Code stable extensions ──────────────────────────────────────────────
 vscode "github.copilot-workspace"
 vscode "github.codespaces"
 vscode "github.vscode-pull-request-github"
@@ -35,7 +63,6 @@ vscode "streetsidesoftware.code-spell-checker"
 vscode "davidanson.vscode-markdownlint"
 vscode "yzhang.markdown-all-in-one"
 vscode "vscode-icons-team.vscode-icons"
-# Tier 2 — language/tooling support
 vscode "ms-python.python"
 vscode "ms-python.vscode-pylance"
 vscode "ms-python.debugpy"
