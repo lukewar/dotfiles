@@ -27,6 +27,7 @@ export PATH="$PATH:$HOME/Library/Python/3.9/bin"
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 # EM Workspace Shortcuts
 alias em="cd ~/workspace/em && code ."
+alias brewfile="brew bundle --file=~/.local/share/chezmoi/Brewfile"
 
 # Quick Mac performance triage
 slowcheck() {
