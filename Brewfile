@@ -53,7 +53,7 @@ cask "viscosity"
 # Mac App Store apps (via mas — IDs verified below)
 mas "Amphetamine",      id: 937984704
 mas "Azure VPN Client", id: 1553936137
-mas "Deliveries",       id: 924726344
+mas "Deliveries",       id: 290986013
 mas "iMovie",           id: 408981434
 mas "Keynote",          id: 361285480
 mas "Numbers",          id: 361304891
