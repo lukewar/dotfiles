@@ -35,7 +35,6 @@ cask "microsoft-edge"
 
 # Comms
 cask "slack"
-cask "zoom"
 cask "microsoft-teams"
 
 # Microsoft 365 (Word/Excel/PowerPoint/Outlook/OneNote)
