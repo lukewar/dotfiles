@@ -19,25 +19,27 @@ REPOS=(
     "github/agentic-automations"
     "github/info-recall-agent"          # was 'clippy' locally
     "github/entitlements"
-    "github/keyboard-extension"
+    "lukewar/lingua-key-ios:keyboard-extension"
     "github/hubbers-mcp-server"
-    "github/workspace-lukewar"          # 'em'
+    "github/workspace-lukewar:em"
     "github/dependants-sync-action"
     "github/cybercats"
     "github/github-mcp-server"
-    "github/markitdown"
+    "microsoft/markitdown"
     "github/pyhubbers"
     "github/vpn"
 )
 
-for repo in "${REPOS[@]}"; do
-    name=$(basename "$repo")
+for entry in "${REPOS[@]}"; do
+    repo="${entry%%:*}"
+    name="${entry##*:}"
+    [[ "$name" == "$entry" ]] && name=$(basename "$repo")
     if [[ -d "$name/.git" ]]; then
         echo "↻ $name exists — pulling"
-        (cd "$name" && git pull --ff-only 2>&1 | tail -1)
+        (cd "$name" && git pull --ff-only 2>&1 | tail -1) || echo "  (pull failed, continuing)"
     else
-        echo "⬇ cloning $repo"
-        gh repo clone "$repo" "$name" 2>&1 | tail -2
+        echo "⬇ cloning $repo → $name"
+        gh repo clone "$repo" "$name" 2>&1 | tail -2 || echo "  (clone failed, continuing)"
     fi
 done
 
