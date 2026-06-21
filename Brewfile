@@ -36,6 +36,9 @@ cask "microsoft-edge"
 # Comms
 cask "slack"
 cask "microsoft-teams"
+# Zoom is MDM-managed — listed here so `brew bundle cleanup` won't remove it.
+# `brew bundle install` will report a failure for it; ignore.
+cask "zoom"
 
 # Microsoft 365 (Word/Excel/PowerPoint/Outlook/OneNote)
 cask "microsoft-office"
