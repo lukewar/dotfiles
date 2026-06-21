@@ -21,7 +21,6 @@ brew "mas"              # Mac App Store CLI (for Deliveries etc.)
 # Dev / editors
 cask "visual-studio-code"
 cask "visual-studio-code@insiders"
-cask "iterm2"
 cask "copilot-cli"
 cask "claude"
 cask "chatgpt"
