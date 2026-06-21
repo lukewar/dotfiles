@@ -49,7 +49,14 @@ cask "languagetool-desktop"
 cask "viscosity"
 
 # Mac App Store apps (via mas — IDs verified below)
-mas "Deliveries", id: 924726344
+mas "Amphetamine",      id: 937984704
+mas "Azure VPN Client", id: 1553936137
+mas "Deliveries",       id: 924726344
+mas "iMovie",           id: 408981434
+mas "Keynote",          id: 361285480
+mas "Numbers",          id: 361304891
+mas "Pages",            id: 361309726
+mas "Push Security",    id: 1596916655
 
 # ─── VS Code stable extensions ──────────────────────────────────────────────
 vscode "github.copilot-workspace"
