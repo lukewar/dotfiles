@@ -45,7 +45,7 @@ cask "microsoft-office"
 cask "obsidian"
 cask "raycast"
 cask "cleanshot"
-cask "languagetool"
+cask "languagetool-desktop"
 cask "viscosity"
 
 # Mac App Store apps (via mas — IDs verified below)
