@@ -24,7 +24,6 @@ REPOS=(
     "github/dependants-sync-action"
     "github/cybercats"
     "github/github-mcp-server"
-    "microsoft/markitdown"
     "github/pyhubbers"
     "github/vpn"
 )
