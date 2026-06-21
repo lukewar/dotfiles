@@ -1,20 +1,18 @@
 #!/usr/bin/env bash
-# Hash: {{ include "vscode-extensions.txt" | sha256sum }}-{{ include "vscode-insiders-extensions.txt" | sha256sum }}
-# Installs/updates VS Code (stable + insiders) extensions when either list changes.
+# Hash: {{ include "vscode-insiders-extensions.txt" | sha256sum }}
+# Installs VS Code Insiders extensions. Stable extensions are handled by `brew bundle`.
 set -euo pipefail
 cd "{{ .chezmoi.sourceDir }}"
 
-install_from_list() {
-    local cli="$1" list="$2"
-    [[ -x "$cli" || -n "$(command -v "$cli" 2>/dev/null)" ]] || { echo "skip: $cli not available"; return 0; }
-    [[ -f "$list" ]] || return 0
-    echo "==> Installing extensions from $list using $cli"
-    while IFS= read -r ext; do
-        [[ -z "$ext" || "$ext" == \#* ]] && continue
-        "$cli" --install-extension "$ext" --force >/dev/null
-    done < "$list"
-}
+CLI="/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin/code"
+LIST="vscode-insiders-extensions.txt"
 
-install_from_list "code" "vscode-extensions.txt"
-install_from_list "/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin/code" "vscode-insiders-extensions.txt"
+[[ -x "$CLI" ]] || { echo "skip: VS Code Insiders not installed"; exit 0; }
+[[ -f "$LIST" ]] || exit 0
+
+echo "==> Installing VS Code Insiders extensions"
+while IFS= read -r ext; do
+    [[ -z "$ext" || "$ext" == \#* ]] && continue
+    "$CLI" --install-extension "$ext" --force >/dev/null
+done < "$LIST"
 echo "==> Done"
