@@ -1,4 +1,4 @@
-# Source-only paths: present in the chezmoi source repo but NOT applied to $HOME.
 ai
 Brewfile
 vscode-insiders-extensions.txt
+scripts
