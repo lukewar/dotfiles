@@ -19,7 +19,6 @@ REPOS=(
     "github/agentic-automations"
     "github/info-recall-agent"          # was 'clippy' locally
     "github/entitlements"
-    "lukewar/lingua-key-ios:keyboard-extension"
     "github/hubbers-mcp-server"
     "github/workspace-lukewar:em"
     "github/dependants-sync-action"
@@ -29,6 +28,8 @@ REPOS=(
     "github/pyhubbers"
     "github/vpn"
 )
+# NOTE: private personal repos under lukewar/* are intentionally NOT cloned here.
+# They live only on the old Mac (or are pushed to GitHub as WIP branches).
 
 for entry in "${REPOS[@]}"; do
     repo="${entry%%:*}"
